@@ -1,0 +1,15 @@
+.btn-group{
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+.btn-group button{
+    display: inline-block;
+    width: 40%;
+    height: 2rem;
+    
+    border-radius: 5%;
+    outline: none;
+}
