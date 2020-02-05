@@ -6,8 +6,10 @@ import { AnimeComponent } from './anime.component';
 const routes: Routes = [
   { 
     path: '', 
-    component: AnimeComponent
-   }
+    component: AnimeComponent,
+    
+   },
+   { path: 'anime-detail', loadChildren: () => import('../anime-detail/anime-detail.module').then(m => m.AnimeDetailModule) }
 ];
 
 @NgModule({
