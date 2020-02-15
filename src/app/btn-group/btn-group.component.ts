@@ -17,4 +17,8 @@ export class BtnGroupComponent implements OnInit {
     this.routeTo.navigate(['login'] , { relativeTo: this.currentRoute })
   }
 
+  showRegisterForm(){
+    this.routeTo.navigate( ['register'] , { relativeTo: this.currentRoute })
+  }
+
 }

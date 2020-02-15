@@ -2,23 +2,29 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    ModalComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports:[
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ModalComponent
   ]
 })
-export class HeaderAndFooterSharedModule { 
+export class SharedModule { 
   static forRoot(){
     return { 
-      NgModule: HeaderAndFooterSharedModule
+      NgModule: SharedModule
      }
   }
 }

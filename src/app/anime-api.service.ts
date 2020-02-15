@@ -8,14 +8,23 @@ import { Anime } from './model/anime';
   providedIn: 'root'
 })
 export class AnimeApiService {
-  rootUrl: string= "https://api.jikan.moe/v3/"
+  rootUrl: string = 'http://localhost:3000/';
+  // topAnimeUrl: string = 'top/anime/';
   constructor(private httpService: HttpClient) { }
 
-  getAnimeData( url ): Observable<Anime[]>{
-    return this.httpService.get<Anime[]>(this.rootUrl+url).pipe(
+  getData( ): Observable<Anime>{
+    let completeUrl = this.rootUrl + 'anime';
+    return this.httpService.get<Anime>(completeUrl).pipe(
       catchError( () => throwError("Error in retreiving data") )
     );
   }
-  
+
+  getAnimeById( id: string ):Observable<Anime>{
+    return this.httpService.get<any>( this.rootUrl+ "anime/" + id ).pipe(
+      catchError( () => throwError("Error in retreiving data") )
+    )
+  }
 
 }
+  
+

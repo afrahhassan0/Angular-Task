@@ -1,0 +1,27 @@
+<h3> Join the Otaku community </h3>
+
+<form #loginForm="ngForm"> 
+    <!-- {{ loginForm.value | json }} -->
+    <!-- {{ registeringUser | json }} -->
+    <div class="credentials-container" id="credentials">
+        <div class="email-container"> 
+            <input type="email" id="email" autocomplete="off" name="email" [(ngModel)]="registeringUser.email" required>
+            <label for="email">Email <span>*</span></label>
+        </div>
+        <div class="password-container">
+            <input type="password"  id="password"  autocomplete="off" name="password"  [(ngModel)]="registeringUser.password" required minlength="8" maxlength="20">
+            <label for="password">Password <span>*</span> </label>
+        </div>   
+        <div class="radio-container">
+            <div>
+                <label for="male">Male </label>  
+                <input type="radio" id="male" name="gender" [(ngModel)]="registeringUser.gender" value="male" checked required>    
+            </div>
+            <div>
+            <label for="female">Female </label>  
+            <input type="radio" id="female" name="gender" [(ngModel)]="registeringUser.gender" value="female">
+            </div>
+           </div>  
+    </div>
+    <button type="submit"  [disabled]="loginForm.invalid" (click)="register()">Register</button>
+</form>

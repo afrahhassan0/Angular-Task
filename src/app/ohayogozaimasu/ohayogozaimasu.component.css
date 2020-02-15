@@ -1,41 +1,87 @@
+/* 
+Mobile first approach
+*/
+
 main{
     height: 100vh;
+    padding: 4%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    overflow: hidden;
+}
+section h1{
+    font-family: 'Sigmar One', cursive;
+    font-size: 8vw;
+    text-shadow: 3px 3px 4px #25245c;
+}
+/*  
+.top-right{
+    height: 20%;
+    width: 30%;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    transform: rotate(-10deg);
+    background-image: linear-gradient( to right , #7f31bf , var(--accent-color));
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom-left-radius: 40% 60% ;
+    border-bottom-right-radius: 40% 38%;
+    border-top-left-radius: 30%;
+    
+
+}
+
+.top-right-hides{    
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 100%;
     width: 100%;
 
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-image: url(../../assets/homePageWallpaper.jpg);
+    background-color:var(--main-background-color);
+    transform: scale(0.9);
 
-    display: flex;
-    flex-direction: row-reverse;
+    border-bottom-left-radius: 40% 60% ;
+    border-bottom-right-radius: 40% 38%;
+    border-top-left-radius: 30%;
+} */
 
-    padding: 1rem;
+
+@media screen and ( min-width: 900px ){
+    main{
+        flex-direction: row;
+    }
+    section.image{
+        width: 50%;
+        height: 80%;
+        position: relative;
+
+        z-index: -1;
+    }
+
+    section img{
+        height: 100%;
+        width: 100%;
+        transform: translate( 0, -50px );
+        transform: scale(1.1);
+    }
+
+    section{
+        width: 50%;
+        text-align: initial;
+
+    }
+
+    section h1{
+        font-size: 2rem;
+    }
 }
-
-section{
-    width: 50%;
-    height: fit-content;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-/* #f5deb3 */
-section h1{
-    font-size: 2.4rem;
-    margin-bottom: 1rem;
-    color: whitesmoke;
-    text-shadow: -3px 3px 5px #534a39;
-    font-family: 'Sigmar One', cursive;
-}
-
-section p{
-    line-height: 1.4rem;
-    font-size: 1.2rem;
-    color: whitesmoke;
-    text-shadow: 0 0 3px #534a39;
-    text-align: justify;
-}
-
-

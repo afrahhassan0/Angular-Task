@@ -1,2 +1,25 @@
-<p>anime works!</p>
-<button type="button" routerLink="./anime-detail">Detail</button>
+<div class="page-layout">
+    <div>
+        <app-header></app-header>
+    </div>
+    <div class="main-content">
+    <div class="anime-tile" *ngFor="let tile of anime" routerLink="./anime-detail/{{tile.anime_id}}" (click)="stopLoad()">
+            <div class="image-side">
+                <img src= "{{tile.image_url}}"  alt=" {{ tile.anime_title }} poster ">
+            </div>
+            <div class="info-side">
+                <div class="title">
+                    {{ tile.anime_title }}
+                </div>
+                <div class="footer">
+                    <span> {{ tile.anime_type }} </span>
+                </div>
+            </div>
+          </div>      
+    </div>
+</div>
+
+<!-- <app-modal>
+
+</app-modal> -->
+<!-- <button type="button" routerLink="./anime-detail">Detail</button> -->

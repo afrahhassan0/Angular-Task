@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AnimeDetailRoutingModule } from './anime-detail-routing.module';
 import { AnimeDetailComponent } from './anime-detail.component';
-import { HeaderAndFooterSharedModule } from '../header-and-footer-shared/header-and-footer-shared.module';
+import { SharedModule } from '../header-and-footer-shared/shared-module';
 
 
 @NgModule({
@@ -11,7 +11,7 @@ import { HeaderAndFooterSharedModule } from '../header-and-footer-shared/header-
   imports: [
     CommonModule,
     AnimeDetailRoutingModule,
-    HeaderAndFooterSharedModule
+    SharedModule
   ]
 })
 export class AnimeDetailModule {}

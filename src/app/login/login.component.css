@@ -1,9 +1,110 @@
-nb-card-body.example-items-col {
-  align-items: stretch;
+form{
+  padding: 1.5rem;
+  box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.233);
+  border-radius: 5px;
+  height: 60%;
+  width: 100%;
+
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
+.username-container{
+  height: 40%;
+  position: relative;
+  margin-bottom: 2%;
+}
+
+
+.password-container{
+  height: 40%;
+  position: relative;
+
+  margin-bottom: 2%;
+}
+
+
 button{
-    margin: 1rem 0;
+  width: 30%;
+  padding: 2% 4%;
+  margin-top: 4%;
+  color: whitesmoke;
+  font-family: 'Sigmar One', cursive;
+  border: thin solid var(--secondary-color);
+  background-color: transparent;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: inset 0 0 4px var(--accent-color);
+}
+
+button:hover{
+  box-shadow: inset 0 0 8px var(--accent-color);
+}
+
+button:active{
+  position: relative;
+  top: 1px
+}
+
+input{
+  outline: none;
+  background-color: transparent;
+  border: none;
+  font-size: 0.9rem;
+  width: 100%;
+  height: 100%;
+  padding: 6% 5px 0 5px;
+  color: whitesmoke;
+}
+
+
+label{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  pointer-events: none;
+  border-bottom: thin solid var(--secondary-color);
+}
+
+aside{
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: right;
+}
+aside span:nth-child(1){
+  font-style: italic;
+  color: #3a3980c2;
+}
+
+aside span:nth-child(2){
+  text-decoration: underline;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+ 
+@media screen and ( min-width: 900px ){
+  button{
+    width: 20%;
+    padding: 1% 2%;
+  }
+}
+
+
+input.ng-touched.ng-invalid + label{
+  border-bottom: thin solid var(--warn-color);
+}
+
+input.ng-touched.ng-invalid + label span{
+  color: var(--warn-color);
+}
+
+button:disabled{
+  box-shadow: none;
+  opacity: 0.5;
 }

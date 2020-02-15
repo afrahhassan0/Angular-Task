@@ -1,1 +1,32 @@
-<p>anime-detail works!</p>
+<app-header></app-header>
+
+<div class="title">
+    <div class="img">
+        <img src="{{ anime.image_url }}" alt="{{ anime.anime_title }}">
+    </div>
+    <h1>{{ anime.anime_title }}</h1>
+</div>
+
+<div class="quick-info-container">
+    <div class="quick-info">
+        <div>
+            <div>Rank</div>
+            <div>{{ anime.anime_rank }}</div>
+        </div>
+        <div>
+            <div>Type</div>
+            <div>{{ anime.anime_type | uppercase }}</div>
+        </div>
+        <div>
+            <div>Episodes</div>
+            <div>{{ anime.episodes }}</div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="score-outside">
+    <div class="score"></div>
+</div> -->
+
+
+

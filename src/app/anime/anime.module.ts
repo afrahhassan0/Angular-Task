@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { AnimeRoutingModule } from './anime-routing.module';
 import { AnimeComponent } from './anime.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AnimeApiService } from '../anime-api.service';
-import { HeaderAndFooterSharedModule } from '../header-and-footer-shared/header-and-footer-shared.module';
+import { SharedModule } from '../header-and-footer-shared/shared-module';
+import { AuthGuard } from '../auth.guard';
 
 @NgModule({
   declarations: [AnimeComponent],
@@ -13,8 +13,9 @@ import { HeaderAndFooterSharedModule } from '../header-and-footer-shared/header-
     CommonModule,
     AnimeRoutingModule, 
     HttpClientModule,
-    HeaderAndFooterSharedModule
-  ]
+    SharedModule
+  ],
   
+  providers:[AuthGuard]
 })
 export class AnimeModule { }

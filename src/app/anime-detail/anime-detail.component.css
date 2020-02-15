@@ -1,0 +1,97 @@
+.title{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    position: relative;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.title h1{
+    text-align: center;
+    font-family: 'Sigmar One', cursive;
+    text-shadow:  1px 1px 3px rgba(0, 0, 0, 0.507);
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+.img{
+    margin-left: auto;
+    margin-right: auto;
+}
+.img img{
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.486);
+}
+
+.quick-info-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.438);
+}
+
+.quick-info{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.quick-info > div{
+    border: thin solid var(--secondary-color);
+    padding: 0.6rem 1.2rem;
+    width: 130px; 
+    height: 120px; 
+    display: flex;
+    flex-direction: column;  
+    border-radius: 5px;
+    box-shadow: inset 0 0 2px var(--accent-color) , 4px 4px 8px rgba(0, 0, 0, 0.384);
+    align-items: center;
+    justify-content: center;
+}
+
+.quick-info > div > div{
+    font-family: 'Sigmar One', cursive;
+    font-weight: lighter;
+}
+
+.quick-info > div:not(:last-child){
+    margin-right: 1rem;
+}
+
+
+.quick-info > div > div:last-child{
+    /* height: 60%; */
+    text-align: center;
+}
+
+
+@media screen and (min-width: 800px){
+    .quick-info{
+        width: 40%;
+        padding: 2rem;
+    }
+
+    .title{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title .img , .title h1{
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        margin: 0;
+    }
+
+    .title .img{
+        margin-right: 1rem;
+    }
+ 
+
+}
