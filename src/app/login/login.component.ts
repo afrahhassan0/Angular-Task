@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       res=> {
         this.auth.setEmail( this.loggingUser.email );
         localStorage.setItem( 'token' , res.auth );
-        this.routeTo.navigate( ['anime-home-page']);
+        this.routeTo.navigate( ['anime-home-page/1']);
       }, (error: HttpErrorResponse)=>{ 
           alert("Wrong credentials")
         

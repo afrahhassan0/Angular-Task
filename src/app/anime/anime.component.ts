@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Anime } from '../model/anime';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AnimeApiService } from '../anime-api.service';
+import { ActivatedRoute, Router, RouterEvent, NavigationEnd } from '@angular/router';
+import { Subscription } from 'rxjs';
+
+
+
 
 @Component({
   selector: 'app-anime',
@@ -10,20 +13,38 @@ import { AnimeApiService } from '../anime-api.service';
 })
 
 export class AnimeComponent implements OnInit {   
-  topUrl: string="top/anime";
   anime: Anime;
+  pageNb: number;
+  refreshSubscription: Subscription;
 
-
-  constructor( private currentRoute: ActivatedRoute , private routeTo: Router , private service: AnimeApiService) {
+  constructor( private currentRoute: ActivatedRoute , private routeTo: Router ) {
     this.anime = this.currentRoute.snapshot.data['anime'];
+
+    this.routeTo.routeReuseStrategy.shouldReuseRoute = ()=> {
+      return false;
+    };   
+
+    this.refreshSubscription = this.routeTo.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.routeTo.navigated = false;
+      }
+    });
    }
 
   ngOnInit() {
-    
+    this.currentRoute.paramMap.subscribe( res => {
+      this.pageNb = parseInt(res.get('page'));
+    })
+  } 
+
+  ngOnDestroy(){
+    if( this.refreshSubscription ) this.refreshSubscription.unsubscribe();
   }
 
-  goToDetail( id:string ){
-    this.routeTo.navigate([ '/anime-detail' ] , { relativeTo: this.currentRoute })
+  updatePage(pageNumber){
+   this.routeTo.navigate( [ '/anime-home-page/'+pageNumber ]);
+  
+   console.log(pageNumber)
   }
 
   stopLoad(){

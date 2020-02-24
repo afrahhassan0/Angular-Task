@@ -14,12 +14,11 @@ export class HeaderComponent implements OnInit {
   }
 
   logOutUser(){
-    console.log("Loggingg out");
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.routeTo.navigate( [ '/welcome' ] );
   }
 
   goHome(){
-    this.routeTo.navigate( [ '/anime-home-page' ] )
+    this.routeTo.navigate( [ '/anime-home-page/1' ] )
   }
 }

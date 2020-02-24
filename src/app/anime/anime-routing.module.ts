@@ -10,8 +10,7 @@ const routes: Routes = [
     path: '', 
     component: AnimeComponent,
     resolve: { anime: AnimeResolverService },
-    canActivate: [AuthGuard]
-    
+    canActivate: [AuthGuard],    
    },
    { path: 'anime-detail/:id', loadChildren: () => import('../anime-detail/anime-detail.module').then(m => m.AnimeDetailModule) }
 ];

@@ -14,7 +14,7 @@ export class AnimeResolverService implements Resolve<Anime> {
 
   resolve(route: ActivatedRouteSnapshot , state: RouterStateSnapshot):Observable<Anime>{
     
-    return this.service.getData().pipe(
+    return this.service.getData( route.paramMap.get('page') ).pipe(
       catchError((error)=> {
         return empty();
       }

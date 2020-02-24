@@ -6,9 +6,10 @@ import { AnimeComponent } from './anime.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../header-and-footer-shared/shared-module';
 import { AuthGuard } from '../auth.guard';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
-  declarations: [AnimeComponent],
+  declarations: [AnimeComponent, PaginatorComponent],
   imports: [
     CommonModule,
     AnimeRoutingModule, 

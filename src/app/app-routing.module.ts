@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OhayogozaimasuComponent } from './ohayogozaimasu/ohayogozaimasu.component';
-import { Z_FULL_FLUSH } from 'zlib';
 import { LoginComponent } from './login/login.component';
 import { BtnGroupComponent } from './btn-group/btn-group.component';
 import { RegisterComponent } from './register/register.component';
@@ -18,14 +17,13 @@ const routes: Routes = [
     ]
   },
 
-  // {
-  //   path: 'anime-home-page',
-  //   redirectTo: 'anime-home-page/:id',
-  //   pathMatch: "full"
-  // },
+  {
+    path: 'anime-home-page',
+    redirectTo: 'anime-home-page/:page',
+    pathMatch: "full"
+  },
 
-  { path: 'anime-home-page', loadChildren: () => import('./anime/anime.module').then(m => m.AnimeModule) },
-
+  { path: 'anime-home-page/:page', loadChildren: () => import('./anime/anime.module').then(m => m.AnimeModule) },
    //default
    {
     path: "",
@@ -36,7 +34,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes , {
+    onSameUrlNavigation: "reload"
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

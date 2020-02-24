@@ -17,9 +17,7 @@
             </div>
           </div>      
     </div>
+    <div class="paginator">
+        <app-paginator [activePage]="pageNb" (paginationClicked)="updatePage($event)" ></app-paginator>
+    </div>
 </div>
-
-<!-- <app-modal>
-
-</app-modal> -->
-<!-- <button type="button" routerLink="./anime-detail">Detail</button> -->
